@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "94883e57-5b44-4261-8f87-23a204faa3b9",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13055586",
+		"_collection_link": "https://my-dev-090.postman.co/workspace/Team-Workspace~7fd6d24c-a7ef-4ccd-896f-7d9d7cc20862/collection/13055586-94883e57-5b44-4261-8f87-23a204faa3b9?action=share&creator=13055586&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"password_confirmation\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rana@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Report Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": \"500\",\r\n    \"buyer\": \"Willsmith\",\r\n    \"receipt_id\": \"ds5d4\",\r\n    \"items\": \"Mobile, Laptop, pc\",\r\n    \"buyer_email\": \"buyer@gmail.com\",\r\n    \"note\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\r\n    \"city\": \"Dhaka\",\r\n    \"phone\": \"880174520325\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/report/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"report",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report Update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"id\":\"2\",\r\n    \"amount\": \"400\",\r\n    \"buyer\": \"Willsmith Ruman\",\r\n    \"receipt_id\": \"ds5d4\",\r\n    \"items\": \"Mobile, Laptop, pc\",\r\n    \"buyer_email\": \"buyer@gmail.com\",\r\n    \"note\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\",\r\n    \"city\": \"Dhaka\",\r\n    \"phone\": \"880174520325\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/report/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"report",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reports List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/report/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"report",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reports Search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/report/search?q=017",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"report",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "017"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reports Search Date Range",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/report/date-range?start=2023-07-01&end=2023-07-31",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"report",
+								"date-range"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023-07-01"
+								},
+								{
+									"key": "end",
+									"value": "2023-07-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/report/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"report",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/report/delete/7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"report",
+								"delete",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2JhY2tlbmQudGVjcmVnaW9uLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE2ODkyMzc4OTUsImV4cCI6MTY4OTI0MTQ5NSwibmJmIjoxNjg5MjM3ODk1LCJqdGkiOiJxd0MzTjdpSzR6Mzc0a1Y3Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.X5Ufv5uiz5XMttKOoY61fTy4chsVS5xRTSGj-wQOEzs",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://backend.tecregion.com/api",
+			"type": "string"
+		}
+	]
+}
